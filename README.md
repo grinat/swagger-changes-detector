@@ -2,6 +2,12 @@
 
 > Detect and compares changes in swagger scheme
 
+#### Download
+
+[Windows](build/)
+
+[Linux](build/)
+
 #### Build Setup
 
 ``` bash
