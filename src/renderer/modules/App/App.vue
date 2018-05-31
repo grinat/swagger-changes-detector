@@ -6,6 +6,14 @@
 
 <script>
   export default {
-    name: 'swagger-dev-changes-detector'
+    name: 'swagger-dev-changes-detector',
+    mounted () {
+      // hide app splash
+      if (document.getElementById('app-bootstrap')) {
+        window.requestAnimationFrame(() => {
+          document.getElementById('app-bootstrap').style.display = 'none'
+        })
+      }
+    }
   }
 </script>

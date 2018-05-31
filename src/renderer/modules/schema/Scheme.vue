@@ -7,7 +7,10 @@
             <h3 class="headline mb-0">{{item.doc.name}}</h3>
             <div>{{item.doc.url}}</div>
             <div>
-              <a :href="item.doc.UIUrl" target="_blank">
+              <a
+                :href="item.doc.UIUrl"
+                @click.stop.prevent="$electron.shell.openExternal(item.doc.UIUrl)"
+              >
                 {{item.doc.UIUrl}}
               </a>
             </div>
@@ -70,7 +73,11 @@
       <v-list v-if="item && downloads && downloads.length" three-line>
         <v-subheader>Downloads</v-subheader>
         <template v-for="(item, index) in downloads">
-          <v-list-tile :key="item.id">
+          <v-list-tile
+            :key="item.id"
+            title="Click for open folder with file"
+            @click.stop.prevent="openDirWithFile(item.doc.filePath)"
+          >
             <v-list-tile-content>
               <v-list-tile-title>
                 {{item.doc.createdAt | timeFormat(dateFormat)}} ({{item.doc.createdAt | timeFormat}})
@@ -169,6 +176,9 @@
       }
     },
     methods: {
+      openDirWithFile (filePath) {
+        this.$electron.shell.showItemInFolder(filePath)
+      },
       compareItems () {
         this.comparing = true
         this.$store.dispatch('readDiff', {

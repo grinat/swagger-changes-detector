@@ -16,6 +16,21 @@
     <script>
       if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
     </script>
+    <div id="app-bootstrap"></div>
+    <style>
+    #app-bootstrap {
+      background-position: center;
+      background-repeat: no-repeat;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      left: 0;
+      z-index: 999999;
+      background-image: url('<%= require('../build/icons/256x256.png') %>');
+    }
+    </style>
 
     <!-- webpack builds are automatically injected -->
   </body>
