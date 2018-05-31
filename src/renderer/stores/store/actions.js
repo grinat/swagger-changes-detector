@@ -98,7 +98,7 @@ export default {
       })
       let firstObject = JSON.parse(firstData.data)
       let lastObject = JSON.parse(lastData.data)
-      const diff = await SwaggerDiff(firstObject, lastObject)
+      const diff = await SwaggerDiff(lastObject, firstObject)
       return {
         diff,
         firstObject,

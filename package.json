@@ -1,6 +1,6 @@
 {
   "name": "swagger-changes-detector",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "Gabdrashitov Rinat <paladin2012gnu@gmail.com>",
   "description": "Detect and compares changes in swagger scheme",
   "license": "MIT",
