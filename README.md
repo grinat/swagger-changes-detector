@@ -1,6 +1,8 @@
 # swagger-changes-detector
 
-> Detect and compares changes in swagger scheme
+Detect and compares changes in swagger scheme
+
+![Scheme compare screenshot](docs/images/scheme.png)
 
 #### Download
 
