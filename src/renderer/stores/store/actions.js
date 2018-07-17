@@ -12,7 +12,9 @@ export default {
       const time = +new Date()
       const doc = await db.get(docId)
       const {url} = doc
-      const response = await api.get(url)
+      const response = await api.get(url, {
+        disableGlobalError: true
+      })
       // save scheme file
       const fileData = JSON.stringify(response.data).toString()
       const fileId = `${getNewID()}.json`

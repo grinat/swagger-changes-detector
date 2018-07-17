@@ -36,6 +36,7 @@
           if (e && e.response && e.response.data && e.response.data.message) {
             msg += e.response.data.message.toString()
           } else if (e && e.response && e.response.data) {
+            msg += e.toString() + ' '
             for (let key in e.response.data) {
               if (e.response.data[key].message) {
                 msg += e.response.data[key].message + ' '

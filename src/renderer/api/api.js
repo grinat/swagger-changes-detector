@@ -18,7 +18,7 @@ axios.interceptors.response.use(function (response) {
     const name = apiState.getNameByUrl(error.response.config.url)
     if (error.config && error.config.method === 'get') {
       const name = apiState.getNameByUrl(error.config.url)
-      disableErrorHandler === false && store.commit('mutateError', {name: name, error: error})
+      disableErrorHandler === false && store.commit('mutateError', {name, error: error})
     }
   } else {
     console.error('unknow error', error)
