@@ -2,6 +2,10 @@
 # https://simulatedgreg.gitbooks.io/electron-vue/content/en/testing.html#on-the-subject-of-ci-testing
 version: 0.1.{build}
 
+environment:
+  access_token:
+    secure: 0omBO9yJYsr6ii+/UNoqPVS4HtOcVN/fZl9akizt7PuA2M7M5GZrNJCS9L1ePHCB
+
 branches:
   only:
     - master
@@ -29,5 +33,14 @@ install:
 build_script:
   #- yarn test
   - yarn build
+
+on_success:
+  - git config --global credential.helper store
+  - ps: Add-Content "$HOME\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+  - git config --global user.email "paladin2012gnu@gmail.com"
+  - git config --global user.name "grinat"
+  - git add build/\\*
+  - git commit -m "appveyor: build for windows"
+  - git push
 
 test: off
