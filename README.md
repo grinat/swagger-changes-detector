@@ -1,5 +1,7 @@
 # swagger-changes-detector
 
+![](https://travis-ci.org/grinat/swagger-changes-detector.svg?branch=master)
+
 Detect and compares changes in swagger scheme
 
 ![Scheme compare screenshot](docs/images/scheme.png)
