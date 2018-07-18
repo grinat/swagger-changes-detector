@@ -8,11 +8,11 @@ Detect and compares changes in swagger scheme
 
 #### Download
 
-[Windows](https://github.com/grinat/swagger-changes-detector/releases)
+[Windows](https://github.com/grinat/swagger-changes-detector/releases/latest)
 
-[Linux](https://github.com/grinat/swagger-changes-detector/releases)
+[Linux](https://github.com/grinat/swagger-changes-detector/releases/latest)
 
-[Mac OS](https://github.com/grinat/swagger-changes-detector/releases)
+[Mac OS](https://github.com/grinat/swagger-changes-detector/releases/latest)
 
 #### Build Setup
 
