@@ -1,6 +1,7 @@
 # swagger-changes-detector
 
-![Travis CI status](https://travis-ci.org/grinat/swagger-changes-detector.svg?branch=master)
+[![Travis CI status](https://travis-ci.org/grinat/swagger-changes-detector.svg?branch=master)](https://travis-ci.org/grinat/swagger-changes-detector)
+[![Appveyor CI status](https://ci.appveyor.com/api/projects/status/github/grinat/swagger-changes-detector?branch=master&svg=true)](https://ci.appveyor.com/project/grinat/swagger-changes-detector)
 
 Detect and compares changes in swagger scheme
 
