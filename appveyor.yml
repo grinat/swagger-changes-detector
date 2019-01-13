@@ -20,10 +20,8 @@ init:
   - git config --global core.autocrlf input
 
 install:
-  - ps: Install-Product node 8 x64
-  - choco install yarn --ignore-dependencies
+  - ps: Install-Product node 9 x64
   - git reset --hard HEAD
-  - yarn
   - node --version
 
 build_script:
