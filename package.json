@@ -1,6 +1,6 @@
 {
   "name": "swagger-changes-detector",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "Gabdrashitov Rinat <paladin2012gnu@gmail.com>",
   "description": "Detect and compares changes in swagger scheme",
   "license": "MIT",
@@ -132,7 +132,7 @@
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.4.2",
     "webpack": "^3.5.2",
-    "webpack-dev-server": "^2.7.1",
+    "webpack-dev-server": "^2.9.7",
     "webpack-hot-middleware": "^2.18.2",
     "webpack-merge": "^4.1.0"
   }

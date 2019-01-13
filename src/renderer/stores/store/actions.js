@@ -1,5 +1,5 @@
 import {docSortComparator} from "../../utils/db-helper"
-import {getNewID} from "../../utils/num-helper"
+import {getNewID, geDateTime} from "../../utils/helpers"
 import db from "../db/db"
 import {SCHEME, SCHEME_DOWNLOAD} from "../../modules/schema/models/types"
 import api from "../../api/api"
@@ -17,7 +17,7 @@ export default {
       })
       // save scheme file
       const fileData = JSON.stringify(response.data).toString()
-      const fileId = `${getNewID()}.json`
+      const fileId = `${geDateTime()}.json`
       const {filePath} = await request.send('saveFile', {
         data: fileData,
         name: fileId

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import {getNewID} from "../../utils/num-helper"
+import {getNewID} from "../../utils/helpers"
 
 const request = request || {
   senders: {},
