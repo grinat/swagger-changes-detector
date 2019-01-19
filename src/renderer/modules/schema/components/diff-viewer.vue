@@ -49,7 +49,7 @@
                 changedMsg += `\nAdded:\n${added.join("\n")}\n`
               }
               if (removed.length > 0) {
-                changedMsg += `\nRemoved:${removed.join("\n")}\n`
+                changedMsg += `\nRemoved:\n${removed.join("\n")}\n`
               }
               changedMsg += `\nInformation:\n${message}`
             }
