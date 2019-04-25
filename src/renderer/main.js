@@ -86,6 +86,13 @@ router.beforeResolve((to, from, next) => {
   })
 })
 
+if (process.env.NODE_ENV === 'production') {
+  Vue.config.errorHandler = (err) => {
+    console.error(err)
+    snack.show(err)
+  }
+}
+
 /* eslint-disable no-new */
 new Vue({
   components: { App },

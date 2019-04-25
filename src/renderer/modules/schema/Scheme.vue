@@ -223,3 +223,9 @@
     }
   }
 </script>
+
+<style>
+  .schema.scheme .list__tile{
+    user-select: initial;
+  }
+</style>

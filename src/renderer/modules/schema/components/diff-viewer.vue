@@ -1,5 +1,5 @@
 <template>
-  <v-card class="diff-viewer">
+  <v-card>
     <slot name="header"></slot>
 
     <div v-for="item, key in preparedDiff" :class="key" :key="key">
@@ -12,7 +12,7 @@
             v-for="row, index in item" :key="index"
             :hide-actions="!row.message"
           >
-            <div slot="header">{{row.shortDesc}}</div>
+            <div slot="header">{{row.shortDesc || '-'}}</div>
             <v-card v-if="row.message">
               <v-card-text v-html="row.message"></v-card-text>
             </v-card>
@@ -39,8 +39,9 @@
         const origin = this.diff
         const transform = {}
         const maxShortDescLen = 200
+        // key = errors | warnings | unmatchDiffs and etc...
         for (let key in origin) {
-          transform[key] = origin[key].map(({ruleId, message, previousDescription, currentDescription, descriptionPath}) => {
+          transform[key] = origin[key].map(({ruleId = '', message = '', previousDescription = '', currentDescription = '', descriptionPath = '', path = []}) => {
             let changedMsg = message
             if (ruleId === "edit-description") {
               const { added, removed } = this.getDiffOfDesc(previousDescription, currentDescription)
@@ -60,14 +61,19 @@
             } else {
               changedMsg = null
             }
-            return {message: changedMsg, ruleId, shortDesc}
+
+            if (key === 'unmatchDiffs' && !changedMsg && path.length) {
+              shortDesc = path.join(" ")
+            }
+
+            return {message: changedMsg, shortDesc}
           })
         }
         return transform
       }
     },
     methods: {
-      getDiffOfDesc (previousDescription, currentDescription) {
+      getDiffOfDesc (previousDescription = '', currentDescription = '') {
         const added = []
         const removed = []
         const curr = currentDescription.split("\n")
